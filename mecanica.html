@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoTech Taller - Sistema de Mecánica</title>
+  <style>
+    /* Estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #0d1b2a;
+      color: #fff;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #00b4d8;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      flex-direction: column;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* Secciones */
+    section {
+      padding: 60px 80px;
+    }
+
+    h2.section-title {
+      text-align: center;
+      color: #0d1b2a;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      position: relative;
+    }
+
+    h2.section-title::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #00b4d8;
+      display: block;
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+
+    /* Servicios */
+    .services {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      margin: 15px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      color: #00b4d8;
+      margin-bottom: 10px;
+    }
+
+    /* Cita */
+    .form-section form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-section input, .form-section textarea {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .form-section button {
+      padding: 10px;
+      border: none;
+      background: #00b4d8;
+      color: white;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .form-section button:hover {
+      background: #0077b6;
+    }
+
+    /* Dashboard */
+    .dashboard {
+      background: #e1e8ef;
+      padding: 60px;
+    }
+
+    .dashboard-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: #0d1b2a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>AutoTech Taller</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#cita">Cita</a>
+      <a href="#estado">Estado</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#dashboard">Panel</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h2>Tu vehículo en las mejores manos</h2>
+    <p>Expertos en mecánica, electricidad y pintura automotriz</p>
+  </section>
+
+  <section id="servicios">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Mecánica General</h3>
+        <p>Reparación y mantenimiento de motores, frenos y suspensión.</p>
+      </div>
+      <div class="service-card">
+        <h3>Electricidad Automotriz</h3>
+        <p>Diagnóstico y reparación de sistemas eléctricos del vehículo.</p>
+      </div>
+      <div class="service-card">
+        <h3>Pintura y Latonería</h3>
+        <p>Restauración completa con acabados profesionales.</p>
+      </div>
+      <div class="service-card">
+        <h3>Repuestos</h3>
+        <p>Venta de piezas originales y de alta calidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cita" class="form-section">
+    <h2 class="section-title">Solicita tu Cita</h2>
+    <form>
+      <input type="text" placeholder="Nombre completo" required>
+      <input type="text" placeholder="Teléfono" required>
+      <input type="text" placeholder="Placa del vehículo" required>
+      <textarea placeholder="Describe el problema..." rows="4" required></textarea>
+      <button type="submit">Enviar solicitud</button>
+    </form>
+  </section>
+
+  <section id="estado" class="form-section">
+    <h2 class="section-title">Consulta el Estado de tu Vehículo</h2>
+    <form>
+      <input type="text" placeholder="Número de orden o placa" required>
+      <button type="submit">Consultar</button>
+    </form>
+  </section>
+
+  <section id="contacto">
+    <h2 class="section-title">Contáctanos</h2>
+    <p style="text-align:center;">📍 Av. Principal #25, Santo Domingo | ☎️ (809) 555-1234 | ✉️ contacto@autotech.com</p>
+  </section>
+
+  <section id="dashboard" class="dashboard">
+    <h2 class="section-title">Panel del Empleado</h2>
+    <div class="dashboard-container">
+      <div class="card">
+        <h3>Órdenes Activas</h3>
+        <p>12 en proceso</p>
+      </div>
+      <div class="card">
+        <h3>Vehículos en Taller</h3>
+        <p>8 vehículos</p>
+      </div>
+      <div class="card">
+        <h3>Stock de Repuestos</h3>
+        <p>245 piezas disponibles</p>
+      </div>
+      <div class="card">
+        <h3>Ventas del Mes</h3>
+        <p>$125,300</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p copy;></pcopy>© 2025 AutoTech Taller | Sistema de Mecánica Automotriz</p>
+  </footer>
+
+</body>
+</html>
